@@ -1,0 +1,271 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+img {
+  width: 100%;
+  height: auto;*, *::before, *::after {
+  box-sizing: border-box;}
+}
+
+
+/* Make the checkboxes invisible - the label becomes the checkbox */
+input[type='checkbox'] {
+  display: none;
+}
+
+
+.main {
+  width: 100%;
+  display: grid;
+}
+
+
+.button-label {
+  font-family: roboto;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  display: block;
+  padding: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0rem;
+  margin-right: 1rem;
+  margin-left: 0rem;
+  border-right: 0.3rem solid;
+  border-right-color: #6F6F6F;
+  background-color: #8896A3;
+  transition: .5s ease-out;
+}
+
+
+.button:checked ~ .button-label {
+  background: #FF8A00;
+}
+
+
+/* Make the checkboxes invisible - the label becomes the checkbox */
+input[type='checkbox'] {
+  display: none;
+}
+
+
+/* Hides the content when button is not checked */
+.actual-content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+}
+
+
+/* Displays the content when button is checked */
+.button:checked + .button-label + .actual-content {
+  max-height: 100vh;
+}
+
+
+#imgcontainer {
+  background-image: linear-gradient(to top, #225382, #A728D1);
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1rem solid;
+  border-bottom-color: #6F6F6F;
+}
+
+
+/* Style the bottom left region when on desktop */
+#filler {
+  width: 100%;
+  background-image: linear-gradient(to bottom left, #225382, #3E80BF);
+}
+
+
+#contentcontainer {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(to right, #225382, #3E80BF);
+  border-left: 1rem solid;
+  border-top: 0.2rem solid;
+  border-color: #FF8A00;
+  padding-bottom: 5rem;
+  flex-flow: column;
+  height: 100%;
+}
+
+
+#h1container {
+  background-image: linear-gradient(to bottom, #225382, #3E80BF);
+  border-left: 1rem solid;
+  border-left-color: #8896A3;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+}
+
+
+h1 {
+  font-family: roboto;
+  font-weight: 300;
+  color: #FFFFFF;
+  font-size: 3rem;
+  padding-top: 2rem;
+  padding-left: 0.5rem;
+  margin: 0rem;
+  margin-right: 1rem;
+}
+
+
+p {
+  font-family: roboto;
+  color: #FFFFFF;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 1rem;
+}
+
+
+.projectlinks {
+  color: #FFFFFF;
+}
+
+
+.projectlinks:hover {
+  color: #FF8A00;
+}
+
+
+.projectlinks:active {
+  color: #FF8A00;
+}
+
+
+#contactlinkscontainer {
+  margin-left: 0.5rem;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  column-gap: 3rem;
+}
+
+
+.contactlinks {
+  color: #FFFFFF;
+  font-size: 2.6rem;
+}
+
+
+.contactlinks:hover {
+  color: #FF8A00;
+}
+
+
+.contactlinks:active {
+  color: #FF8A00;
+}
+
+
+/* Change layout for tablet */
+@media only screen and (min-width: 700px) {
+
+
+.main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+
+#filler {
+  border-top: 0.2rem solid;
+  border-top-color: #FF8A00;
+}
+
+
+#h1container {
+  grid-column: 2/3;
+  border-bottom: 0.8rem solid;
+  border-bottom-color: #8896A3;
+  border-left: 1rem solid;
+  border-left-color: #6F6F6F;
+  background-image: linear-gradient(to top, #225382, #A728D1)
+}
+
+
+#imgcontainer {
+  border-bottom: 0.8rem solid;
+  border-bottom-color: #6F6F6F;
+  padding-bottom: 0.8rem;
+  background-image: linear-gradient(to top, #225382, #A728D1)
+}
+
+
+}
+
+
+/* Change layout for desktop (adds in menu hover animation) */
+@media only screen and (min-width: 850px) {
+
+
+.button-label {
+  font-family: roboto;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  display: block;
+  padding: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+  margin-left: 0rem;
+  border-right: 0.3rem solid;
+  border-right-color: #6F6F6F;
+  background: linear-gradient(to left, #8896A3 50%, #FF8A00 50%) right;
+  background-size: 200%;
+  transition: .5s ease-out;
+}
+
+
+.button-label:hover {
+  background-position: left;
+}
+
+
+.main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+
+#contentcontainer {
+  padding-right: 3rem;
+}
+
+
+}
+
+
+/* Even wider desktop */
+@media only screen and (min-width: 1100px) {
+
+
+#contentcontainer {
+  padding-right: 6rem;
+}
+
+
+.main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+}
+
+
+}
+
+
+
+
