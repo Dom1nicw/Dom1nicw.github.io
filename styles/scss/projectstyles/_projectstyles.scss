@@ -1,0 +1,33 @@
+@import "../values/values";
+
+.left-bit {
+    border-top: solid $textColour $normalLineWidth;
+}
+
+.project{
+    margin: 0rem 0.5rem 0.5rem 0rem;
+    .project-header {
+        background: $buttonDarkBlue;
+        border: $textColour solid $normalLineWidth;
+        border-radius: 0rem 0.5rem 0.5rem 0.5rem;
+        font-size: 1.2rem;
+        padding: 0.2rem 0rem 0.2rem 0.3rem;
+        &.clicked {
+            border-radius: 0rem 0.5rem 0rem 0rem;
+            background: $clickedButton;
+        }
+    }
+    .project-content {
+        border: $textColour solid $normalLineWidth;
+        border-top: 0;
+        .actual-content {
+            padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-carousel {
+            border: $textColour solid $normalLineWidth;
+            @import "projectcarousels/projectcarouselsstyles";
+        }
+    }
+}

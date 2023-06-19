@@ -1,0 +1,50 @@
+@import "../../values/values";
+
+.carousel-images-container {
+    width: 100%;
+    aspect-ratio: 3/2;
+    overflow: hidden;
+    justify-content: flex-start;
+    align-items: flex-end;
+    display: grid;
+    overflow: hidden;
+    border-bottom: $textColour solid $normalLineWidth;
+    direction: rtl;
+}
+
+.symbols-container {
+    display: grid;
+    margin: 0 15% 0 15%;
+    grid-template-columns: 2rem 1fr 2rem;
+    align-items: center;
+    justify-content: center;
+    .indicator-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .left-button, .right-button {
+        transition: padding;
+        transition-duration: 0.2s;
+        font-size: 1.5rem;
+    }
+    .left-button {
+        text-align: right;
+        &.clicked {
+            padding-right: 30%;
+        }
+    }
+    .right-button {
+        text-align: left;
+        &.clicked {
+            padding-left: 30%;
+        }
+    }
+}
+
+.carousel-image {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    height: 100%;
+}

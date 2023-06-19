@@ -1,89 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    <script defer src="scripts/scripts.js"></script>-->
 
-  <title>Dom Wheeler Portfolio</title>
+    <link rel="stylesheet" href="styles/css/normalise.css">
+    <link rel="stylesheet" href="styles/css/styles.css">
 
-  <meta name="description" content="A page about me">
-  <meta name="Dom Wheeler" content="iO Academy">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer">
 
-  <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-  <link rel="icon" href="images/favicon.png" sizes="192x192">
-  <link rel="shortcut icon" href="images/favicon.png">
-  <link rel="apple-touch-icon" href="images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script defer src="scripts/scripts.js"></script>
 
-  <!-- <script defer src="js/index.js"></script> -->
+    <title>Carousel</title>
+
 </head>
 
+<body>
 
-<body class="main">
+<div class="page-content">
 
-<div id="imgcontainer">
-  <img src="images/temppic.jpeg" alt="Profile pic">
+<div class="pictures-carousel" data-current-pic="1" data-size="3">
+    <div class="carousel-images-container">
+        <div class="carousel-image selected" data-pic-id="1">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Mona_Lisa-restored.jpg/1200px-Mona_Lisa-restored.jpg">
+        </div>
+
+        <div class="carousel-image" data-pic-id="2">
+            <img src="https://images.unsplash.com/photo-1621440318431-b720cd358375?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1734&q=80">
+        </div>
+
+        <div class="carousel-image" data-pic-id="3">
+            <img src="https://images.unsplash.com/photo-1621440318357-3e3c94221a1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1734&q=80">
+        </div>
+
+    </div>
+
+    <div class="image-fader-mobile"></div>
+
+    <div class="image-fader-desktop">
+        <div class="top-left-part"></div>
+        <div class="bottom-left-part"></div>
+        <div class="bottom-right-part"></div>
+    </div>
+
+    <div class="symbols-container">
+        <i class="fa-solid fa-chevron-left left-button"></i>
+        <span class="indicator-container">
+            <span class="indicator selected" data-indicator-id="1">_</span>
+            <span class="indicator" data-indicator-id="2">_</span>
+            <span class="indicator" data-indicator-id="3">_</span>
+        </span>
+        <i class="fa-solid fa-chevron-right right-button"></i>
+    </div>
 </div>
 
-<div id="h1container">
-  <h1>Dominic Wheeler</h1>
+<div class="title-area">
+    Carousel
 </div>
 
-<div id="filler"></div>
+<div class="horizontal-line"></div>
 
-<div id="contentcontainer">
-  <section id="about-me-section" >
-    <input id="about-me-button" class="button" type="checkbox">
-    <label for="about-me-button" class="button-label">About me</label>
-    <div id="about-me-content" class="actual-content">
-      <p>
-        Hi, I'm Dom. I recently graduated from Exeter University (July 2022) and I'm currently a student at iO Academy hoping to become a software developer.<br>
-        <br>
-        I first started coding properly at university when making projects on RStudio and MATLAB.<br>
-        <br>
-        My main hobbies include playing cricket, football and listening to drum and bass.
-      </p>
+<div class="space-below-title">
+    <div class="left-bit"></div>
+    <div class="right-bit"></div>
+</div>
+
+<div class="sections-area">
+
+    <div class="margin-space"></div>
+    <div class="section" id="about-me-section">
+        <div class="section-header">About Me</div>
+        <div class="content hidden">
+            <div class="content-left-border"></div>
+            <div class="actual-content">
+                <p>
+                    Hi, I'm Dom. I recently graduated from Exeter University (July 2022) and I'm currently a student at iO
+                    Academy hoping to become a software developer.
+                </p>
+                <p>
+                    I first started coding properly at university when making projects on RStudio and MATLAB
+                </p>
+                <p>
+                    My main hobbies include playing cricket, football and listening to drum and bass.
+                </p>
+            </div>
+            <div class="content-right-border"></div>
+            <div class="content-bottom-border"></div>
+        </div>
     </div>
-  </section>
-  
-  <section id="projects-section">
-    <input id="projects-button" class="button" type="checkbox">
-    <label for="projects-button" class="button-label">Projects</label>
-    <div id="projects-content" class="actual-content">
-      <p>
-        You can see an overview of some projects I've worked on <a class="projectlinks" href="projectsindex.html">here</a>. <br> <br>
-        Alternatively you can visit my <a class="projectlinks" href="https://github.com/Dom1nicw">github</a>.
-      </p>
-      </p>
-      <a href="diss/mastersproject.pdf">Here</a> is a link to my master's project.
-      <p>
+
+    <div class="margin-space"></div>
+    <div class="section" id="projects-section">
+        <div class="section-header">Projects</div>
+        <div class="content hidden">
+            <div class="content-left-border"></div>
+            <div class="actual-content">
+                <p>
+                    You can see an overview of some projects I have worked on below.
+                </p>
+                <p>
+                    Alternatively you can visit my github.
+                </p>
+
+                <div class="projects-container">
+                    <div class="left-bit"></div>
+                    <div class="project">
+                        <div class="project-header">Collectors App</div>
+                        <div class="project-content">
+<!--                            <div class="content-left-border"></div>-->
+                            <div class="actual-content">
+                                <p class="project-description">
+                                    collectors app collectors app collectors app collectors app collectors app
+                                    collectors app collectors app collectors app collectors app
+                                </p>
+                                <div class="project-links"></div>
+
+                                <div class="project-carousel" data-current-pic="1" data-size="3">
+
+                                    <div class="carousel-images-container">
+                                        <div class="carousel-image selected" data-pic-id="1">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Mona_Lisa-restored.jpg/1200px-Mona_Lisa-restored.jpg">
+                                        </div>
+
+                                        <div class="carousel-image" data-pic-id="2">
+                                            <img src="https://images.unsplash.com/photo-1621440318431-b720cd358375?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1734&q=80">
+                                        </div>
+
+                                        <div class="carousel-image" data-pic-id="3">
+                                            <img src="https://images.unsplash.com/photo-1621440318357-3e3c94221a1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1734&q=80">
+                                        </div>
+                                    </div>
+
+                                    <div class="symbols-container">
+                                        <i class="fa-solid fa-caret-left left-button"></i>
+                                        <span class="indicator-container">
+                                            <span class="indicator selected" data-indicator-id="1">&#8226</span>
+                                            <span class="indicator" data-indicator-id="2">&#8226</span>
+                                            <span class="indicator" data-indicator-id="3">&#8226</span>
+                                        </span>
+                                        <i class="fa-solid fa-caret-right right-button"></i>
+                                    </div>
+
+
+                                </div>
+                            </div>
+<!--                            <div class="content-right-border"></div>-->
+<!--                            <div class="content-bottom-border"></div>-->
+                        </div>
+                    </div>
+
+                    <div class="left-bit"></div>
+                    <div class="project">
+                        <div class="project-header">OOP API</div>
+                        <div class="project-content">
+                            <div class="content-left-border"></div>
+                            <div class="actual-content">
+                                <p>
+                                    oop api oop api oop api oop api
+                                </p>
+                            </div>
+                            <div class="content-right-border"></div>
+                            <div class="content-bottom-border"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="content-right-border"></div>
+            <div class="content-bottom-border"></div>
+        </div>
     </div>
-  </section>
-  
-  <section id="contact-me-section">
-    <input id="contact-me-button" class="button" type="checkbox">
-    <label for="contact-me-button" class="button-label">Get in touch</label>
-    <div id="contact-me-content" class="actual-content">
-      <p id="contact-me-text">
-        Get in touch via the links below:<br>
-      </p>
-      <div id="contactlinkscontainer">
-        <a class="contactlinks" href="https://github.com/Dom1nicw"><i class="fa-solid fa-envelope"></i></a>
-        <a class="contactlinks" href="https://github.com/Dom1nicw"><i class="fa-brands fa-linkedin"></i></a>
-        <a class="contactlinks" href="https://github.com/Dom1nicw"><i class="fa-brands fa-github"></i></a>
-      </div>
+
+    <div class="margin-space"></div>
+    <div class="section" id="contact-section">
+        <div class="section-header">Contact</div>
+        <div class="content">
+            <div class="content-left-border"></div>
+            <div class="actual-content">
+                <p>
+                    Get in touch from any of the links below.
+                </p>
+                <div class="contact-links">
+                    links here
+                </div>
+            </div>
+            <div class="content-right-border"></div>
+            <div class="content-bottom-border"></div>
+        </div>
     </div>
-  </section>
 
 </div>
+
+<div class="footer-area">
+    <div class="vertical-line"></div>
+</div>
+
+</div>
+
+
+
 
 </body>
-
 </html>

@@ -1,0 +1,52 @@
+@import "../values/values";
+
+.section-header {
+    font-size: 1.5rem;
+    padding: 0.2rem 0rem 0.2rem 0.5rem;
+    border: $normalLineWidth solid white;
+    border-radius: 0rem 0.5rem 0.5rem 0.5rem;
+    background: $buttonDarkBlue;
+    transition: 0.5s;
+    &.clicked {
+        border-radius: 0rem 0.5rem 0rem 0rem;
+        background: $clickedButton;
+        //background: white;
+        //color: #0b2f4f;
+    }
+}
+
+.content {
+    height: 0px;
+    overflow: hidden;
+    transition-duration: 1s;
+    &.selected {
+        height: auto;
+        display: grid;
+        grid-template-columns: $normalLineWidth 1fr $normalLineWidth;
+    }
+    p {
+        padding-bottom: 0.3rem;
+    }
+    .content-left-border {
+        background: white;
+    }
+    .content-right-border {
+        //background: linear-gradient(to bottom, $textColour 20%, transparent 20%, transparent 80%, $textColour 80%);
+        background: white;
+    }
+    .content-bottom-border {
+        grid-column: 1/4;
+        height: $normalLineWidth;
+        //background: linear-gradient(to right, $textColour 2%, transparent 2%);
+        background: white;
+    }
+    //.actual-content {
+    //    padding: 0.2rem 0.3rem 0rem 0.3rem;
+    //}
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: 1rem 1fr;
+    @import "../projectstyles/projectstyles";
+}

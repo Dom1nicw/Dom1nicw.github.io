@@ -1,0 +1,74 @@
+@import "defaults/defaultstyles";
+@import "values/values";
+
+body {
+    background: no-repeat fixed linear-gradient(to right, $backgroundDarkBlue 0%, $backgroundLightBlue 100%);
+}
+
+.page-content {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    color: $textColour;
+}
+
+.pictures-carousel {
+    margin: 0;
+    display: grid;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    align-items: end;
+    @import "picturescarousel/picturescarouselstyles";
+}
+
+.title-area {
+    background: $backgroundDarkBlue;
+    padding: 0rem 0.5rem 0rem 0.5rem;
+    font-size: 2.5rem;
+}
+
+.horizontal-line {
+    width: 100%;
+    height: $normalLineWidth;
+    background: linear-gradient(to right, $textColour 40%, $backgroundDarkBlue 90%);
+}
+
+.space-below-title {
+    height: 3rem;
+    display: grid;
+    grid-template-columns: 0.5rem 1fr;
+    .right-bit {
+        border-left: 0.1rem solid #FFFFFF;
+    }
+    background: radial-gradient(ellipse 100% 100% at 100% 100%, $backgroundLightBlue 0%, $backgroundDarkBlue 100%);
+}
+
+.sections-area {
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+    display: grid;
+    grid-template-columns: 1rem 1fr;
+    row-gap: 3rem;
+    border-left: $textColour solid $normalLineWidth;
+    .margin-space {
+        border-top: $normalLineWidth solid white;
+    }
+    @import "sections/sectionsstyles";
+}
+
+.footer-area {
+    height: 6rem;
+    .vertical-line {
+        margin-left: 0.5rem;
+        width: $normalLineWidth;
+        height: 100%;
+        background: linear-gradient(to bottom, $textColour 1%, transparent 50%);
+    }
+}
+
+@media screen and (min-width: 550px) {
+    @import "layouts/tabletlayout";
+}
