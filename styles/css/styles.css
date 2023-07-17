@@ -143,14 +143,13 @@ body {
       opacity: 1; } }
 
 .title-area {
-  background: #225382;
+  background: red;
   padding: 0rem 0.5rem 0rem 0.5rem;
-  font-size: 2.5rem; }
-
-.horizontal-line {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(to right, #FFFFFF 40%, #225382 90%); }
+  font-size: 2.5rem;
+  font-weight: 100;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-image: linear-gradient(to right, #FFFFFF 60%, #225382 90%) 1; }
 
 .space-below-title {
   height: 3rem;
@@ -158,7 +157,7 @@ body {
   grid-template-columns: 0.5rem 1fr;
   background: radial-gradient(ellipse 100% 100% at 100% 100%, #3E80BF 0%, #225382 100%); }
   .space-below-title .right-bit {
-    border-left: 0.1rem solid #FFFFFF; }
+    border-left: 1px solid #FFFFFF; }
 
 .sections-area {
   margin-left: 0.5rem;
@@ -166,9 +165,9 @@ body {
   display: grid;
   grid-template-columns: 1rem 1fr;
   row-gap: 3rem;
-  border-left: #FFFFFF solid 1px; }
+  border-left: 1px solid #FFFFFF; }
   .sections-area .margin-space {
-    border-top: 1px solid white; }
+    border-top: 1px solid #FFFFFF; }
   .sections-area .section-header {
     font-size: 1.5rem;
     padding: 0.2rem 0rem 0.2rem 0.5rem;
@@ -178,15 +177,19 @@ body {
     transition: 0.5s; }
     .sections-area .section-header.clicked {
       border-radius: 0rem 0.5rem 0rem 0rem;
-      background: red; }
+      background: #FFFFFF;
+      color: #0d3157; }
   .sections-area .content {
-    height: 0px;
+    height: auto;
+    max-height: 100vh;
     overflow: hidden;
-    transition-duration: 1s; }
-    .sections-area .content.selected {
-      height: auto;
-      display: grid;
-      grid-template-columns: 1px 1fr 1px; }
+    transition: all 2s ease-out;
+    display: grid;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem; }
+    .sections-area .content.collapse {
+      max-height: 0px; }
     .sections-area .content p {
       padding-bottom: 0.3rem; }
     .sections-area .content .content-left-border {
@@ -212,7 +215,7 @@ body {
         padding: 0.2rem 0rem 0.2rem 0.3rem; }
         .sections-area .projects-container .project .project-header.clicked {
           border-radius: 0rem 0.5rem 0rem 0rem;
-          background: red; }
+          background: #FFFFFF; }
       .sections-area .projects-container .project .project-content {
         border: #FFFFFF solid 1px;
         border-top: 0; }
@@ -261,12 +264,11 @@ body {
             height: 100%; }
 
 .footer-area {
-  height: 6rem; }
-  .footer-area .vertical-line {
-    margin-left: 0.5rem;
-    width: 1px;
-    height: 100%;
-    background: linear-gradient(to bottom, #FFFFFF 1%, transparent 50%); }
+  height: 8rem;
+  margin-left: 0.5rem;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-image: linear-gradient(to bottom, #FFFFFF 20%, transparent 50%) 0.5; }
 
 @media screen and (min-width: 550px) {
   .pictures-carousel {

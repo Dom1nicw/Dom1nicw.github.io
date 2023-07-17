@@ -25,15 +25,13 @@ body {
 }
 
 .title-area {
-    background: $backgroundDarkBlue;
+    background: red;
     padding: 0rem 0.5rem 0rem 0.5rem;
     font-size: 2.5rem;
-}
-
-.horizontal-line {
-    width: 100%;
-    height: $normalLineWidth;
-    background: linear-gradient(to right, $textColour 40%, $backgroundDarkBlue 90%);
+    font-weight: 100;
+    border-bottom-style: solid;
+    border-bottom-width: $normalLineWidth;
+    border-image: linear-gradient(to right, $textColour 60%, $backgroundDarkBlue 90%) 1;
 }
 
 .space-below-title {
@@ -41,7 +39,7 @@ body {
     display: grid;
     grid-template-columns: 0.5rem 1fr;
     .right-bit {
-        border-left: 0.1rem solid #FFFFFF;
+        border-left: $normalLineWidth solid $textColour;
     }
     background: radial-gradient(ellipse 100% 100% at 100% 100%, $backgroundLightBlue 0%, $backgroundDarkBlue 100%);
 }
@@ -52,21 +50,29 @@ body {
     display: grid;
     grid-template-columns: 1rem 1fr;
     row-gap: 3rem;
-    border-left: $textColour solid $normalLineWidth;
+    border-left: $normalLineWidth solid $textColour;
     .margin-space {
-        border-top: $normalLineWidth solid white;
+        border-top: $normalLineWidth solid $textColour;
     }
     @import "sections/sectionsstyles";
 }
 
+// .footer-area {
+//     height: 10rem;
+//     .vertical-line {
+//         margin-left: 0.5rem;
+//         width: $normalLineWidth;
+//         height: 100%;
+//         background: linear-gradient(to bottom, $textColour 1%, transparent 40%);
+//     }
+// }
+
 .footer-area {
-    height: 6rem;
-    .vertical-line {
-        margin-left: 0.5rem;
-        width: $normalLineWidth;
-        height: 100%;
-        background: linear-gradient(to bottom, $textColour 1%, transparent 50%);
-    }
+    height: 8rem;
+    margin-left: 0.5rem;
+    border-left-style: solid;
+    border-left-width: $normalLineWidth;
+    border-image: linear-gradient(to bottom, $textColour 20%, transparent 50%) 0.5;
 }
 
 @media screen and (min-width: 550px) {

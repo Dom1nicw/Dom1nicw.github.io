@@ -9,20 +9,26 @@
     transition: 0.5s;
     &.clicked {
         border-radius: 0rem 0.5rem 0rem 0rem;
-        background: $clickedButton;
+        background: $textColour;
         //background: white;
-        //color: #0b2f4f;
+        color: $buttonDarkBlue;
     }
 }
 
 .content {
-    height: 0px;
+    height: auto;
+    max-height: 100vh;
     overflow: hidden;
-    transition-duration: 1s;
-    &.selected {
-        height: auto;
-        display: grid;
-        grid-template-columns: $normalLineWidth 1fr $normalLineWidth;
+    transition: all 2s ease-out;
+    display: grid;
+    // border-left: $textColour solid $normalLineWidth;
+    // border-bottom: $textColour solid $normalLineWidth;
+    // border-right: $textColour solid $normalLineWidth;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    &.collapse {
+        max-height: 0px;
     }
     p {
         padding-bottom: 0.3rem;

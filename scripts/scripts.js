@@ -83,10 +83,12 @@ function toggleSection (e) {
     console.log(section)
     let content = section.querySelector('.content')
     console.log(content)
-    content.classList.toggle('selected')
-    content.classList.toggle('hidden')
+    // content.classList.toggle('hidden')
+    content.classList.toggle('collapse')
 }
 
 function toggleProject (e) {
-
+    e.target.classList.toggle('clicked')
+    let project = e.target.parentElement
+    content.classList.toggle('selected')
 }
