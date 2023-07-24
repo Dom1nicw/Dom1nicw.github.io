@@ -143,7 +143,7 @@ body {
       opacity: 1; } }
 
 .title-area {
-  background: red;
+  background: #225382;
   padding: 0rem 0.5rem 0rem 0.5rem;
   font-size: 2.5rem;
   font-weight: 100;
@@ -169,6 +169,10 @@ body {
   .sections-area .margin-space {
     border-top: 1px solid #FFFFFF; }
   .sections-area .section-header {
+    z-index: 100;
+    height: 1.9rem;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
     font-size: 1.5rem;
     padding: 0.2rem 0rem 0.2rem 0.5rem;
     border: 1px solid white;
@@ -180,16 +184,25 @@ body {
       background: #FFFFFF;
       color: #0d3157; }
   .sections-area .content {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin-top: 1rem;
+    padding: 0rem 0.5rem 0rem 0.5rem;
     height: auto;
     max-height: 100vh;
     overflow: hidden;
-    transition: all 2s ease-out;
+    transition: max-height 1s ease-out;
     display: grid;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem; }
+    border-left: #FFFFFF solid 1px;
+    border-bottom: #FFFFFF solid 1px;
+    border-right: #FFFFFF solid 1px;
+    border-radius: 0rem 0rem 0.5rem 0.5rem; }
     .sections-area .content.collapse {
       max-height: 0px; }
+    .sections-area .content .upper-content-space {
+      height: 2rem; }
+    .sections-area .content .lower-content-space {
+      height: 0rem; }
     .sections-area .content p {
       padding-bottom: 0.3rem; }
     .sections-area .content .content-left-border {
@@ -263,8 +276,11 @@ body {
             grid-row: 1/2;
             height: 100%; }
 
+.section {
+  display: grid; }
+
 .footer-area {
-  height: 8rem;
+  height: 10rem;
   margin-left: 0.5rem;
   border-left-style: solid;
   border-left-width: 1px;

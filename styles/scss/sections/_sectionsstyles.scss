@@ -1,6 +1,10 @@
 @import "../values/values";
 
 .section-header {
+    z-index: 100;
+    height: 1.9rem;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
     font-size: 1.5rem;
     padding: 0.2rem 0rem 0.2rem 0.5rem;
     border: $normalLineWidth solid white;
@@ -16,19 +20,27 @@
 }
 
 .content {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin-top: 1rem;
+    padding: 0rem 0.5rem 0rem 0.5rem;
     height: auto;
     max-height: 100vh;
     overflow: hidden;
-    transition: all 2s ease-out;
+    transition: max-height 1s ease-out;
     display: grid;
-    // border-left: $textColour solid $normalLineWidth;
-    // border-bottom: $textColour solid $normalLineWidth;
-    // border-right: $textColour solid $normalLineWidth;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
+    border-left: $textColour solid $normalLineWidth;
+    border-bottom: $textColour solid $normalLineWidth;
+    border-right: $textColour solid $normalLineWidth;
+    border-radius: 0rem 0rem 0.5rem 0.5rem;
     &.collapse {
         max-height: 0px;
+    }
+    .upper-content-space {
+        height: 2rem;
+    }
+    .lower-content-space {
+        height: 0rem;
     }
     p {
         padding-bottom: 0.3rem;
