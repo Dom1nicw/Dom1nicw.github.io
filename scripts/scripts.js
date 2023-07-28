@@ -2,6 +2,7 @@ const leftButtons = document.querySelectorAll('.left-button')
 const rightButtons = document.querySelectorAll('.right-button')
 const sectionHeaders = document.querySelectorAll('.section-header')
 const projectHeaders = document.querySelectorAll('.project-header')
+const projectContents = document.querySelectorAll('.project-content')
 
 leftButtons.forEach( function (leftButton) {
     leftButton.addEventListener('click', leftButtonClicked)
@@ -80,15 +81,30 @@ function rightButtonClicked(e) {
 function toggleSection (e) {
     e.target.classList.toggle('clicked')
     let section = e.target.parentElement
-    console.log(section)
     let content = section.querySelector('.content')
-    console.log(content)
-    // content.classList.toggle('hidden')
     content.classList.toggle('collapse')
 }
 
 function toggleProject (e) {
-    e.target.classList.toggle('clicked')
-    let project = e.target.parentElement
-    content.classList.toggle('selected')
+    if (e.target.classList.contains('clicked')) {
+        projectContents.forEach( function(projectContent) {
+            projectContent.classList.add('collapse')
+        })
+        projectHeaders.forEach( function(header) {
+            header.classList.remove('clicked')
+        })
+    } else {
+        projectContents.forEach( function(projectContent) {
+            projectContent.classList.add('collapse')
+        })
+        projectHeaders.forEach( function(header) {
+            header.classList.remove('clicked')
+        })
+        e.target.classList.toggle('clicked')
+        let project = e.target.parentElement
+        console.log(project)
+        let content = project.querySelector('.project-content')
+        console.log(content)
+        content.classList.toggle('collapse')
+    }
 }

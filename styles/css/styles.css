@@ -179,11 +179,15 @@ body {
     border-radius: 0rem 0.5rem 0.5rem 0.5rem;
     background: #0d3157;
     transition: 0.5s; }
-    .sections-area .section-header.clicked {
-      border-radius: 0rem 0.5rem 0rem 0rem;
-      background: #FFFFFF;
-      color: #0d3157; }
-  .sections-area .content {
+  .sections-area .normal-header.clicked {
+    border-radius: 0rem 0.5rem 0rem 0rem;
+    background: #FFFFFF;
+    color: #0d3157; }
+  .sections-area .projects-header.clicked {
+    border-radius: 0rem 0.5rem 0.5rem 0rem;
+    background: #FFFFFF;
+    color: #0d3157; }
+  .sections-area .normal-content {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     margin-top: 1rem;
@@ -197,45 +201,96 @@ body {
     border-bottom: #FFFFFF solid 1px;
     border-right: #FFFFFF solid 1px;
     border-radius: 0rem 0rem 0.5rem 0.5rem; }
-    .sections-area .content.collapse {
+    .sections-area .normal-content.collapse {
       max-height: 0px; }
-    .sections-area .content .upper-content-space {
+    .sections-area .normal-content .upper-content-space {
       height: 2rem; }
-    .sections-area .content .lower-content-space {
-      height: 0rem; }
-    .sections-area .content p {
+    .sections-area .normal-content .lower-content-space {
+      height: 0.5rem; }
+    .sections-area .normal-content p {
       padding-bottom: 0.3rem; }
-    .sections-area .content .content-left-border {
-      background: white; }
-    .sections-area .content .content-right-border {
-      background: white; }
-    .sections-area .content .content-bottom-border {
-      grid-column: 1/4;
-      height: 1px;
-      background: white; }
+  .sections-area .projects-content {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin-top: 1rem;
+    height: auto;
+    max-height: 100vh;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
+    display: grid; }
+    .sections-area .projects-content .projects-paragraph {
+      border-left: #FFFFFF solid 1px;
+      padding: 0rem 0.5rem 0.5rem 0.5rem; }
+    .sections-area .projects-content.collapse {
+      max-height: 0px; }
+    .sections-area .projects-content .upper-content-space {
+      border-left: #FFFFFF solid 1px;
+      height: 2rem; }
+    .sections-area .projects-content .lower-content-space {
+      height: 0rem; }
+    .sections-area .projects-content p {
+      padding-bottom: 0.3rem; }
   .sections-area .projects-container {
     display: grid;
     grid-template-columns: 1rem 1fr; }
     .sections-area .projects-container .left-bit {
+      border-top: solid #FFFFFF 1px;
+      border-left: solid #FFFFFF 1px; }
+    .sections-area .projects-container .final-left-bit {
       border-top: solid #FFFFFF 1px; }
     .sections-area .projects-container .project {
-      margin: 0rem 0.5rem 0.5rem 0rem; }
+      display: grid;
+      margin: 0rem 0rem 1.2rem 0rem; }
       .sections-area .projects-container .project .project-header {
+        z-index: 100;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
         background: #0d3157;
         border: #FFFFFF solid 1px;
         border-radius: 0rem 0.5rem 0.5rem 0.5rem;
         font-size: 1.2rem;
-        padding: 0.2rem 0rem 0.2rem 0.3rem; }
+        padding: 0.2rem 0rem 0.2rem 0.3rem;
+        height: 1.6rem;
+        transition: 0.5s; }
         .sections-area .projects-container .project .project-header.clicked {
           border-radius: 0rem 0.5rem 0rem 0rem;
-          background: #FFFFFF; }
+          background: #FFFFFF;
+          color: #0d3157; }
       .sections-area .projects-container .project .project-content {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        margin-top: 1rem;
         border: #FFFFFF solid 1px;
-        border-top: 0; }
+        border-top: 0;
+        border-radius: 0rem 0rem 0.5rem 0.5rem;
+        height: auto;
+        max-height: 100vh;
+        overflow: hidden;
+        transition: max-height 1s ease-out;
+        background-color: rgba(0, 0, 0, 0.3); }
+        .sections-area .projects-container .project .project-content.collapse {
+          max-height: 0px; }
+        .sections-area .projects-container .project .project-content .upper-project-content-space {
+          height: 1rem; }
+        .sections-area .projects-container .project .project-content .lower-project-content-space {
+          height: 1rem; }
         .sections-area .projects-container .project .project-content .actual-content {
-          padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+          padding: 0.6rem 0.7rem 0rem 0.7rem;
+          display: grid;
+          grid-template-columns: 1fr; }
+        .sections-area .projects-container .project .project-content .project-links {
           display: flex;
-          flex-direction: column; }
+          justify-content: space-between;
+          padding: 0.5rem 0rem 0.5rem 0rem; }
+          .sections-area .projects-container .project .project-content .project-links .project-link {
+            text-decoration: none;
+            color: #FFFFFF;
+            padding: 0.2rem 0.3rem 0.2rem 0.3rem;
+            background: #0d3157;
+            border: #FFFFFF solid 1px;
+            border-radius: 0.3rem; }
+            .sections-area .projects-container .project .project-content .project-links .project-link:hover {
+              background: white; }
         .sections-area .projects-container .project .project-content .project-carousel {
           border: #FFFFFF solid 1px; }
           .sections-area .projects-container .project .project-content .project-carousel .carousel-images-container {
@@ -255,14 +310,21 @@ body {
             align-items: center;
             justify-content: center; }
             .sections-area .projects-container .project .project-content .project-carousel .symbols-container .indicator-container {
+              padding: 0rem 30% 0 30%;
               display: flex;
               flex-direction: row;
               justify-content: center;
-              align-items: center; }
+              align-items: center;
+              column-gap: 0.5rem; }
+              .sections-area .projects-container .project .project-content .project-carousel .symbols-container .indicator-container .indicator {
+                transition: 0.15s;
+                font-size: 0.3rem; }
+                .sections-area .projects-container .project .project-content .project-carousel .symbols-container .indicator-container .indicator.selected {
+                  font-size: 0.5rem; }
             .sections-area .projects-container .project .project-content .project-carousel .symbols-container .left-button, .sections-area .projects-container .project .project-content .project-carousel .symbols-container .right-button {
               transition: padding;
               transition-duration: 0.2s;
-              font-size: 1.5rem; }
+              font-size: 2rem; }
             .sections-area .projects-container .project .project-content .project-carousel .symbols-container .left-button {
               text-align: right; }
               .sections-area .projects-container .project .project-content .project-carousel .symbols-container .left-button.clicked {
@@ -276,7 +338,7 @@ body {
             grid-row: 1/2;
             height: 100%; }
 
-.section {
+.section, .projects-section {
   display: grid; }
 
 .footer-area {

@@ -2,28 +2,74 @@
 
 .left-bit {
     border-top: solid $textColour $normalLineWidth;
+    border-left: solid $textColour $normalLineWidth;
 }
 
-.project{
-    margin: 0rem 0.5rem 0.5rem 0rem;
+.final-left-bit {
+    border-top: solid $textColour $normalLineWidth;
+}
+
+.project {
+    display: grid;
+    margin: 0rem 0rem 1.2rem 0rem;
     .project-header {
+        z-index: 100;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
         background: $buttonDarkBlue;
         border: $textColour solid $normalLineWidth;
         border-radius: 0rem 0.5rem 0.5rem 0.5rem;
         font-size: 1.2rem;
         padding: 0.2rem 0rem 0.2rem 0.3rem;
+        height: 1.6rem;
+        transition: 0.5s;
         &.clicked {
             border-radius: 0rem 0.5rem 0rem 0rem;
             background: $clickedButton;
+            color: $buttonDarkBlue;
         }
     }
     .project-content {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        margin-top: 1rem;
         border: $textColour solid $normalLineWidth;
         border-top: 0;
+        border-radius: 0rem 0rem 0.5rem 0.5rem;
+        height: auto;
+        max-height: 100vh;
+        overflow: hidden;
+        transition: max-height 1s ease-out;
+        background-color: $contentBackground;
+        &.collapse {
+            max-height: 0px;
+        }
+        .upper-project-content-space {
+            height: 1rem;
+        }
+        .lower-project-content-space {
+            height: 1rem;
+        }
         .actual-content {
-            padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+            padding: 0.6rem 0.7rem 0rem 0.7rem;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        .project-links {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            padding:0.5rem 0rem 0.5rem 0rem;
+            .project-link {
+                text-decoration: none;
+                color: $textColour;
+                padding: 0.2rem 0.3rem 0.2rem 0.3rem;
+                background: $buttonDarkBlue;
+                border: $textColour solid $normalLineWidth;
+                border-radius: 0.3rem;
+                &:hover {
+                    background: white;
+                }
+            }
         }
         .project-carousel {
             border: $textColour solid $normalLineWidth;

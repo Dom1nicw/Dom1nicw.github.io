@@ -11,6 +11,15 @@
     border-radius: 0rem 0.5rem 0.5rem 0.5rem;
     background: $buttonDarkBlue;
     transition: 0.5s;
+    // &.clicked {
+    //     border-radius: 0rem 0.5rem 0rem 0rem;
+    //     background: $textColour;
+    //     //background: white;
+    //     color: $buttonDarkBlue;
+    // }
+}
+
+.normal-header {
     &.clicked {
         border-radius: 0rem 0.5rem 0rem 0rem;
         background: $textColour;
@@ -19,7 +28,16 @@
     }
 }
 
-.content {
+.projects-header {
+    &.clicked {
+        border-radius: 0rem 0.5rem 0.5rem 0rem;
+        background: $textColour;
+        //background: white;
+        color: $buttonDarkBlue;
+    }
+}
+
+.normal-content {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     margin-top: 1rem;
@@ -40,27 +58,39 @@
         height: 2rem;
     }
     .lower-content-space {
+        height: 0.5rem;
+    }
+    p {
+        padding-bottom: 0.3rem;
+    }
+}
+
+.projects-content {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin-top: 1rem;
+    height: auto;
+    max-height: 100vh;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
+    display: grid;
+    .projects-paragraph {
+        border-left: $textColour solid $normalLineWidth;
+        padding: 0rem 0.5rem 0.5rem 0.5rem;
+    }
+    &.collapse {
+        max-height: 0px;
+    }
+    .upper-content-space {
+        border-left: $textColour solid $normalLineWidth;
+        height: 2rem;
+    }
+    .lower-content-space {
         height: 0rem;
     }
     p {
         padding-bottom: 0.3rem;
     }
-    .content-left-border {
-        background: white;
-    }
-    .content-right-border {
-        //background: linear-gradient(to bottom, $textColour 20%, transparent 20%, transparent 80%, $textColour 80%);
-        background: white;
-    }
-    .content-bottom-border {
-        grid-column: 1/4;
-        height: $normalLineWidth;
-        //background: linear-gradient(to right, $textColour 2%, transparent 2%);
-        background: white;
-    }
-    //.actual-content {
-    //    padding: 0.2rem 0.3rem 0rem 0.3rem;
-    //}
 }
 
 .projects-container {
