@@ -9,11 +9,12 @@ body {
     height: 100%;
     width: 100%;
     display: grid;
+    grid-template-columns: 1fr;
     color: $textColour;
 }
 
 .pictures-carousel {
-    margin: 0;
+    padding: 0 0 0 0;
     display: grid;
     width: 100%;
     aspect-ratio: 2 / 3;
@@ -21,20 +22,24 @@ body {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
     align-items: end;
+    background: $backgroundDarkBlue;
     @import "picturescarousel/picturescarouselstyles";
 }
 
 .title-area {
     background: $backgroundDarkBlue;
-    padding: 0rem 0.5rem 0rem 0.5rem;
+    padding: 0.5rem 0.5rem 0rem 0.5rem;
     font-size: 2.5rem;
     font-weight: 100;
-    border-bottom-style: solid;
-    border-bottom-width: $normalLineWidth;
-    border-image: linear-gradient(to right, $textColour 60%, $backgroundDarkBlue 90%) 1;
+    // border-bottom-style: solid;
+    // border-bottom-width: $normalLineWidth;
+    // border-image: linear-gradient(to right, $textColour 60%, $backgroundDarkBlue 90%) 1;
 }
 
 .space-below-title {
+    border-top-style: solid;
+    border-top-width: $normalLineWidth;
+    border-image: linear-gradient(to right, $textColour 60%, $backgroundDarkBlue 90%) 1;
     height: 3rem;
     display: grid;
     grid-template-columns: 0.5rem 1fr;
@@ -72,3 +77,11 @@ body {
 @media screen and (min-width: 550px) {
     @import "layouts/tabletlayout";
 }
+
+// @media screen and (min-width: 800px) {
+//     @import "layouts/laptoplayout";
+// }
+
+// @media screen and (min-width: 800px) {
+//     @import "layouts/largelaptoplayout";
+// }

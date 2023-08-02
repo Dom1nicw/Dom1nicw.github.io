@@ -26,10 +26,11 @@
         align-items: center;
         column-gap: 0.5rem;
         .indicator {
-            transition: 0.15s;
-            font-size: 0.3rem;
+            transition: 0.3s;
+            font-size: 0.5rem;
+            opacity: 0.4;
             &.selected {
-                font-size: 0.5rem;
+                opacity: 1;
             }
         }
     }
