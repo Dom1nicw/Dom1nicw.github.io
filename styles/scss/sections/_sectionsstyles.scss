@@ -1,16 +1,26 @@
 @import "../values/values";
 
 .section-header {
-    z-index: 100;
+    z-index: 200;
     height: 1.9rem;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     font-size: 1.5rem;
-    padding: 0.2rem 0rem 0.2rem 0.5rem;
+    padding: 0.2rem 1rem 0.2rem 0.5rem;
     border: $normalLineWidth solid white;
     border-radius: 0rem 0.5rem 0.5rem 0.5rem;
     background: $buttonDarkBlue;
     transition: 0.5s;
+    display: flex;
+    justify-content: space-between;
+    .header-arrow-up {
+        display: none;
+        z-index: 0;
+    }
+    .header-arrow-down {
+        display: block;
+        z-index: 0;
+    }
     // &.clicked {
     //     border-radius: 0rem 0.5rem 0rem 0rem;
     //     background: $textColour;
@@ -19,11 +29,21 @@
     // }
 }
 
+.section-header {
+    &.clicked {
+        .header-arrow-up {
+            display: block;
+        }
+        .header-arrow-down {
+            display: none;
+        }
+    }
+}
+
 .normal-header {
     &.clicked {
         border-radius: 0rem 0.5rem 0rem 0rem;
         background: $textColour;
-        //background: white;
         color: $buttonDarkBlue;
     }
 }
@@ -32,7 +52,6 @@
     &.clicked {
         border-radius: 0rem 0.5rem 0.5rem 0rem;
         background: $textColour;
-        //background: white;
         color: $buttonDarkBlue;
     }
 }

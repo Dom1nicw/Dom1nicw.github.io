@@ -9,9 +9,8 @@
     border-top: solid $textColour $normalLineWidth;
 }
 
-.project {
+.project, .final-project {
     display: grid;
-    margin: 0rem 0rem 1.2rem 0rem;
     .project-header {
         z-index: 100;
         grid-column: 1 / 2;
@@ -66,7 +65,7 @@
                 background: $buttonDarkBlue;
                 border: $textColour solid $normalLineWidth;
                 border-radius: 0.3rem;
-                &:hover {
+                &:active {
                     background: white;
                 }
             }
@@ -74,6 +73,20 @@
         .project-carousel {
             border: $textColour solid $normalLineWidth;
             @import "projectcarousels/projectcarouselsstyles";
+        }
+    }
+}
+
+.project {
+    margin: 0rem 0rem 1.2rem 0rem;
+}
+
+@media screen and (min-width: 800px) {
+    .project .project-links .project-link {
+        color: red;
+        &:hover {
+            background: white;
+            color: $buttonDarkBlue;
         }
     }
 }

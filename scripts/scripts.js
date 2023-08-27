@@ -79,8 +79,16 @@ function rightButtonClicked(e) {
 }
 
 function toggleSection (e) {
-    e.target.classList.toggle('clicked')
-    let section = e.target.parentElement
+    let header
+    if (e.target.classList.contains('header-second-child')) {
+        header = e.target.parentElement.parentElement
+    } else if (e.target.classList.contains('header-child')) {
+        header = e.target.parentElement
+    } else {
+        header = e.target
+    }
+    header.classList.toggle('clicked')
+    let section = header.parentElement
     let content = section.querySelector('.content')
     content.classList.toggle('collapse')
 }
