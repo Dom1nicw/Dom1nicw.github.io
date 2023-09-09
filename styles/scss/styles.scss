@@ -77,13 +77,43 @@ body {
     border-image: linear-gradient(to bottom, $textColour 20%, transparent 50%) 0.5;
 }
 
+.contact-links {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    .contact-link {
+        width: fit-content;
+        border-radius: 0.3rem;
+        padding: 0 0.2rem 0 0.2rem;
+        text-decoration: none;
+        color: $textColour;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 0.2rem;
+        .contact-symbol {
+            font-size: 2rem;
+        }
+    }
+}
+
 @media screen and (min-width: 550px) {
     @import "layouts/tabletlayout";
 }
 
-// @media screen and (min-width: 800px) {
-//     @import "layouts/laptoplayout";
-// }
+@media screen and (min-width: 800px) {
+    .contact-link {
+        &:hover {
+            background-color: $textColour;
+            color: $backgroundDarkBlue;
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    @import "layouts/laptoplayout";
+}
 
 // @media screen and (min-width: 800px) {
 //     @import "layouts/largelaptoplayout";

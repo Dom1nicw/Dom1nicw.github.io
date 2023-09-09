@@ -94,7 +94,17 @@ function toggleSection (e) {
 }
 
 function toggleProject (e) {
-    if (e.target.classList.contains('clicked')) {
+    let header
+    if (e.target.classList.contains('header-second-child')) {
+        header = e.target.parentElement.parentElement
+    } else if (e.target.classList.contains('header-child')) {
+        header = e.target.parentElement
+    } else {
+        header = e.target
+    }
+    console.log(header)
+
+    if (header.classList.contains('clicked')) {
         projectContents.forEach( function(projectContent) {
             projectContent.classList.add('collapse')
         })
@@ -108,11 +118,11 @@ function toggleProject (e) {
         projectHeaders.forEach( function(header) {
             header.classList.remove('clicked')
         })
-        e.target.classList.toggle('clicked')
-        let project = e.target.parentElement
-        console.log(project)
+        header.classList.toggle('clicked')
+        let project = header.parentElement
+        // console.log(project)
         let content = project.querySelector('.project-content')
-        console.log(content)
+        // console.log(content)
         content.classList.toggle('collapse')
     }
 }
