@@ -77,6 +77,11 @@ body {
     border-image: linear-gradient(to bottom, $textColour 20%, transparent 50%) 0.5;
 }
 
+.inline-link {
+    text-decoration: underline;
+    color: $textColour;
+}
+
 .contact-links {
     padding-top: 1rem;
     display: flex;
@@ -113,6 +118,12 @@ body {
 
 @media screen and (min-width: 800px) {
     @import "layouts/laptoplayout";
+    .inline-link {
+        &:hover {
+            color: $backgroundDarkBlue;
+            background-color: $textColour;
+        }
+    }
 }
 
 // @media screen and (min-width: 800px) {

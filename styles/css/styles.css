@@ -99,7 +99,7 @@ body {
       grid-column: 2/3;
       grid-row: 2/3; }
   .pictures-carousel .symbols-container {
-    margin: 0rem 0.2rem 2rem 0.2rem;
+    margin: 0rem 0.2rem 1.5rem 0.2rem;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
     height: 5rem;
@@ -143,7 +143,7 @@ body {
   @media screen and (min-width: 800px) {
     .pictures-carousel .left-button:hover, .pictures-carousel .right-button:hover {
       opacity: 1; }
-    .pictures-carousel .pictures-carousel .symbols-container {
+    .pictures-carousel .symbols-container {
       margin: 0 0 1rem 1rem; } }
 
 .title-area {
@@ -226,20 +226,24 @@ body {
     .sections-area .normal-content .lower-content-space {
       height: 0.5rem; }
     .sections-area .normal-content p {
+      padding-bottom: 0.8rem; }
+    .sections-area .normal-content .last-paragraph {
       padding-bottom: 0.3rem; }
   .sections-area .projects-content {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     margin-top: 1rem;
     height: auto;
-    max-height: 100vh;
+    max-height: 300vh;
     overflow: hidden;
     transition: max-height 1s ease-out;
     display: grid; }
     .sections-area .projects-content .projects-paragraph {
       border-left: #FFFFFF solid 1px;
-      padding: 0rem 0.5rem 0.5rem 0.5rem; }
+      padding: 0rem 0.5rem 0.8rem 0.5rem; }
       .sections-area .projects-content .projects-paragraph p {
+        padding-bottom: 0.8rem; }
+      .sections-area .projects-content .projects-paragraph .last-paragraph {
         padding-bottom: 0.3rem; }
     .sections-area .projects-content.collapse {
       max-height: 0px; }
@@ -293,7 +297,7 @@ body {
         border-top: 0;
         border-radius: 0rem 0rem 0.5rem 0.5rem;
         height: auto;
-        max-height: 100vh;
+        max-height: 200vh;
         overflow: hidden;
         transition: max-height 1s ease-out;
         background-color: rgba(0, 0, 0, 0.3); }
@@ -307,6 +311,9 @@ body {
           padding: 0.6rem 0.7rem 0rem 0.7rem;
           display: grid;
           grid-template-columns: 1fr; }
+        .sections-area .projects-container .project .project-content .project-title, .sections-area .projects-container .final-project .project-content .project-title {
+          font-size: 1.15rem;
+          padding-bottom: 0.5rem; }
         .sections-area .projects-container .project .project-content .project-description, .sections-area .projects-container .final-project .project-content .project-description {
           text-align: justify; }
         .sections-area .projects-container .project .project-content .project-links, .sections-area .projects-container .final-project .project-content .project-links {
@@ -375,27 +382,52 @@ body {
     .sections-area .projects-container .project {
       margin: 0rem 0rem 1.2rem 0rem; }
     @media screen and (min-width: 550px) {
-      .sections-area .projects-container .project .project-content .actual-content {
+      .sections-area .projects-container .project .project-content .actual-content, .sections-area .projects-container .final-project .project-content .actual-content {
         grid-template-columns: 1fr 20rem;
         grid-template-rows: min-content 1fr; }
-        .sections-area .projects-container .project .project-content .actual-content .project-description {
+        .sections-area .projects-container .project .project-content .actual-content .project-description, .sections-area .projects-container .final-project .project-content .actual-content .project-description {
           grid-column: 1/2;
           grid-row: 1/3;
           padding-right: 1rem; }
-        .sections-area .projects-container .project .project-content .actual-content .project-links {
+        .sections-area .projects-container .project .project-content .actual-content .project-links, .sections-area .projects-container .final-project .project-content .actual-content .project-links {
           padding: 0 0 1rem 0;
           grid-column: 2/3;
           grid-row: 1/2; }
-        .sections-area .projects-container .project .project-content .actual-content .project-carousel {
+        .sections-area .projects-container .project .project-content .actual-content .project-carousel, .sections-area .projects-container .final-project .project-content .actual-content .project-carousel {
           grid-column: 2/3;
           grid-row: 2/3; } }
     @media screen and (min-width: 800px) {
-      .sections-area .projects-container .project .project-links .project-link:hover {
+      .sections-area .projects-container .project .project-links .project-link:hover, .sections-area .projects-container .final-project .project-links .project-link:hover {
         background: white;
-        color: #0d3157; } }
+        color: #0d3157; }
+      .sections-area .projects-container .project .project-header:hover, .sections-area .projects-container .final-project .project-header:hover {
+        background-color: #4c729b; }
+      .sections-area .projects-container .project .project-header.clicked:hover, .sections-area .projects-container .final-project .project-header.clicked:hover {
+        background-color: #acd4ff; } }
+    @media screen and (min-width: 950px) {
+      .sections-area .projects-container .project .project-content .actual-content, .sections-area .projects-container .final-project .project-content .actual-content {
+        grid-template-columns: 1fr 15rem 20rem;
+        grid-template-rows: min-content 1fr; }
+        .sections-area .projects-container .project .project-content .actual-content .project-description, .sections-area .projects-container .final-project .project-content .actual-content .project-description {
+          grid-column: 1/3;
+          grid-row: 1/2;
+          padding-right: 1rem; }
+          .sections-area .projects-container .project .project-content .actual-content .project-description .project-title, .sections-area .projects-container .final-project .project-content .actual-content .project-description .project-title {
+            padding-top: 0.2rem; }
+        .sections-area .projects-container .project .project-content .actual-content .project-links, .sections-area .projects-container .final-project .project-content .actual-content .project-links {
+          padding: 0 1rem 1rem 0;
+          grid-column: 2/3;
+          grid-row: 1/2;
+          justify-content: flex-end;
+          column-gap: 1rem; }
+        .sections-area .projects-container .project .project-content .actual-content .project-carousel, .sections-area .projects-container .final-project .project-content .actual-content .project-carousel {
+          grid-column: 3/4;
+          grid-row: 1/2; } }
   @media screen and (min-width: 800px) {
     .sections-area .section-header:hover {
-      background-color: #4c729b; } }
+      background-color: #4c729b; }
+    .sections-area .section-header.clicked:hover {
+      background-color: #acd4ff; } }
 
 .section, .projects-section {
   display: grid; }
@@ -406,6 +438,10 @@ body {
   border-left-style: solid;
   border-left-width: 1px;
   border-image: linear-gradient(to bottom, #FFFFFF 20%, transparent 50%) 0.5; }
+
+.inline-link {
+  text-decoration: underline;
+  color: #FFFFFF; }
 
 .contact-links {
   padding-top: 1rem;
@@ -477,7 +513,6 @@ body {
     grid-template-columns: 1fr 23rem; }
 
   .title-area {
-    height: 25rem;
     padding-left: 3.5rem; }
 
   .space-filler {
@@ -495,10 +530,16 @@ body {
   .sections-area {
     row-gap: 3rem;
     margin-left: 3.5rem;
-    margin-right: 8rem;
+    margin-right: 15vw;
     grid-template-columns: 3rem 1fr; }
+    .sections-area .projects-content .projects-container {
+      grid-template-columns: 3rem 1fr; }
 
   .footer-area {
-    margin-left: 3.5rem; } }
+    margin-left: 3.5rem; }
+
+  .inline-link:hover {
+    color: #225382;
+    background-color: #FFFFFF; } }
 
 /*# sourceMappingURL=styles.css.map */
