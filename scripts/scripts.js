@@ -102,7 +102,7 @@ function toggleProject (e) {
     } else {
         header = e.target
     }
-    console.log(header)
+    // console.log(header)
 
     if (header.classList.contains('clicked')) {
         projectContents.forEach( function(projectContent) {
